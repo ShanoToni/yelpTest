@@ -24,9 +24,9 @@
             <a class="shadow p-3 btn btn-warning" href="/campgrounds">Go Back</a> 
             
             <% if(currentUser&&campground.author.id.equals(currentUser._id)){ %>
-            <a class="shadow p-3 btn btn-info" href="/campgrounds/<%= campground._id %>/edit">Edit</a> 
-            <form id="shadow p-3 delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-danger" >Delete</button>
+            <a class="shadow p-3 btn btn-info ml-4 mr-4" href="/campgrounds/<%= campground._id %>/edit">Edit</a> 
+            <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                <button class="btn shadow p-3 btn-danger" >Delete</button>
             </form> 
             <% }%>
 
