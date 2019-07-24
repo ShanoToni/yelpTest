@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+
+        <h1 style="text-align: center; margin-top: 40px; width:100%;">Edit Comment </h1>
+
+        <div style="width:50%; margin:40px auto;">
+            <form action="/campgrounds/<%=campground_id%>/comments/<%=comment._id%>?_method=PUT" method="Post">
+                <div class="form-group">
+                    <label for="textArea1">Comment:</label>
+                    <textarea class="form-control" name="comment[text]" id="textArea1" rows="3"><%=comment.text %></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-success btn-block" type="submit">Submit!</button>
+                </div>
+                
+            </form>    
+
+            <a class="btn btn-warning "href="/campgrounds/<%=campground_id%>">Go Back</a> 
+
+        </div>
+        
+
+    </div>
+    
+
+</div>
+
+
+<% include ../partials/footer %>
