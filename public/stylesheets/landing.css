@@ -9,6 +9,12 @@ body{
     padding-top: 40vh;
 }
 
+#delete-form{
+  display: inline;
+}
+
+
+
 #landing-header h1{
     color: white;
 }

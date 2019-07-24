@@ -1,17 +1,17 @@
 <% include ../partials/header %>
 
-<div class="container mt-4">
+<div class=" container mt-4">
     <div class="row">
         <div class="col-md-3">
             <p class="lead">YelpCamp</p>
-            <div class="list-group">
+            <div class="shadow p-3 list-group">
                 <li class="list-group-item active" >Info 1</li>
                 <li class="list-group-item" >Info 2</li>
                 <li class="list-group-item" >Info 3</li>
             </div>
         </div>
         <div class="col-md-9 ">
-            <div class="card border-dark mb-4">
+            <div class="shadow p-3 card border-dark mb-4">
                 <img class="card-img " src="<%=campground.image%>"  alt="">
                 <div class="card-body">
                     <p class="card-text text-right">£<%=campground.price%>/night</p>
@@ -21,26 +21,26 @@
                 </div>
             </div>
 
-            <a class="btn btn-warning" href="/campgrounds">Go Back</a> 
+            <a class="shadow p-3 btn btn-warning" href="/campgrounds">Go Back</a> 
             
             <% if(currentUser&&campground.author.id.equals(currentUser._id)){ %>
-            <a class="btn btn-info" href="/campgrounds/<%= campground._id %>/edit">Edit</a> 
-            <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+            <a class="shadow p-3 btn btn-info" href="/campgrounds/<%= campground._id %>/edit">Edit</a> 
+            <form id="shadow p-3 delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
                 <button class="btn btn-danger" >Delete</button>
             </form> 
             <% }%>
 
-            <div class="container mt-4" >
+            <div class=" container mt-4" >
                 <% if(currentUser){ %>
-                <div class="text-right mb-4">
-                        <a class="btn btn-success" href="/campgrounds/<%=campground._id %>/comments/new">Add New Comment</a>
+                <div class=" text-right mb-4">
+                        <a class=" btn btn-sm btn-success" href="/campgrounds/<%=campground._id %>/comments/new">Add New Comment</a>
                 </div>
                 <% } %>
                 <% campground.comments.forEach((comment)=>{ %>
-                    <div class="row ">
+                    <div class=" row ">
                         <div class="col-md-12">
-                                <div class="card border-dark mb-2">
-                                    <div class="card-body">
+                                <div class=" card border-dark mb-2">
+                                    <div class=" card-body">
                                         <p class=" text-right m-0">1 day ago</p>
                                         <p class="card-text"> <strong> <%= comment.author.username %> </strong> </p>
                                         <p class="card-text"><%= comment.text %></p>
@@ -49,7 +49,7 @@
                                             href="/campgrounds/<%=campground._id %>/comments/<%= comment._id %>/edit">
                                             Edit
                                         </a> 
-                                        <form id="delete-form" action="/campgrounds/<%=campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="post">
+                                        <form id="delete-form" style="display:inline;" action="/campgrounds/<%=campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="post">
                                             <button class="btn btn-sm btn-danger">
                                                 Delete
                                             </button> 
